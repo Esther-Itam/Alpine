@@ -1,9 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Version from './components/version';
 import './index.css';
 
-ReactDOM.render(
-  <Version />,
-  document.getElementById('root')
+import { Provider } from 'react-redux'
+/* import * as serviceWorker from './serviceWorker';
+ */import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+import store from "./store/index.js";
+
+import App from './App';
+
+ReactDOM.render( <Provider store={store}>
+
+    <App/>
+
+   </Provider>, document.getElementById("root")
 );

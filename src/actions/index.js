@@ -5,3 +5,7 @@
   export function hitPlayer(payload) {
     return { type: "HIT_BACK", payload}
   }; */
+
+  export function choice(payload) {
+    return { type: "CHOICE", payload}
+  };

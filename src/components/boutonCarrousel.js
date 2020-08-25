@@ -2,39 +2,48 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
 import legende from '../images/configurateur/modele/selection/legende.png'
-import pure from '../images/configurateur/modele/selection/pure.png'
+import pure from '../images/configurateur/modele/selection/pure.png';
+/* import { connect, useDispatch } from 'react-redux';
+import {useSelector} from 'react-redux'; */
+ import NavComponent from './nav';
 
 
 
-const BoutonCarousel = () => {
+
+const BoutonCarousel = (props) => {
+
+/*   const dispatch = useDispatch()
+  const choice = ()=> dispatch({type: "CHOICE", payload: props.versions.id})
+  const versions = useSelector((state)=> props.state.versions)
+
+  console.log(props.state.versions); */
+
 return(
-    
-    <Carousel>
-  <Carousel.Item>
-    <a><img
-      className="d-block w-100"
-      src={legende}
-      alt="First slide"
-    /></a>
-    <Carousel.Caption>
-      <h3>Modèle Légende</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <a><img
-      className="d-block w-100"
-      src={pure}
-      alt="Third slide"
-    /></a>
+    <div className="box">
+     <Carousel className="carousel">
+        <Carousel.Item>
+           <img
+            className="d-block w-100"
+             src={legende} 
+            alt="First slide"
+            />
+            <Carousel.Caption>
 
-    <Carousel.Caption>
-      <h3>Modèle Pure</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
- 
-</Carousel>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+            <img
+            className="d-block w-100"
+            src={pure}
+            alt="Third slide"
+            />
+
+
+        </Carousel.Item>
+
+        </Carousel>
+        <NavComponent/>
+    </div>    
 )
 
 }

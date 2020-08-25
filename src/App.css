@@ -22,3 +22,298 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+body{
+  line-height: 1.45;
+  direction:ltr;
+}
+
+
+/* ------------------------------------------------------FOOTER---------------------------------------------------------- */
+.footer{
+  display:flex;
+  width: 100%;
+  overflow: hidden;
+  background:#f3f5f6;
+  justify-content: space-between;
+  border-color:#0843a6;
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  box-sizing:border-box;
+
+}
+
+.footer_details{
+  display:flex;
+  align-items:center;
+  margin:0;
+  padding:16px;
+  color:#0843a6;
+  font-size:2rem;
+  border:0;
+  box-sizing:border-box;
+
+
+
+}
+
+.footer_price{
+  font-weight: 700;
+  margin:0 32px;
+  padding:0;
+  border:0;
+  font-size:100%;
+  box-sizing:border-box;
+  color:#0843a6;
+}
+
+.footer_split{
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  box-sizing:border-box;
+  color:#0843a6;
+
+}
+
+.footer_boutonRecap{
+  position:relative;
+  padding:0;
+  margin:0 32px;
+  color:#777;
+  font-style:italic;
+  border:0;
+  background:none;
+  text-decoration:none;
+  cursor:pointer;
+  font-family:inherit;
+  border-radius:0;
+  text-transform:none;
+  overflow:visible;
+  font-size:100%;
+  line-height:1.15;
+  box-sizing:border-box;
+
+
+}
+
+.footer_boutonRecapContent{
+  position:relative;
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  box-sizing:border-box;
+  color:#777;
+  font-style:italic;
+  font-family:inherit;
+  text-transform:none;
+
+}
+
+.footer_boutonOption{
+  flex:none;
+  min-width:40%;
+  max-width:55%;
+  transform:skew(-18deg);
+  transform-origin:bottom-left;
+  padding:16px;
+  font-size:1.8rem;
+  text-align:middle;
+  color:#3f5f6;
+  margin:0 -15px;
+  text-transform:none;
+  display:inline-block;
+  transition:background .5s,color .5s;
+    transition-property: background, color;
+    transition-duration: 0.5s, 0.5s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+  font-weight: 700;
+  border:0;
+  background:none;
+  background-color:#0843a6;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-image: none;
+  background-size: auto;
+  background-origin: padding-box;
+  background-clip: border-box;
+  text-decoration:none;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: auto;
+  cursor:pointer;
+  font-family:inherit;
+  border-radius:0;
+  overflow:visible;
+  line-height:1.15;
+  box-sizing:border-box;
+  
+
+}
+
+.footer_boutonContent{
+
+  position:relative;
+  margin:0;
+}
+
+.footer_boutonContentSpan{
+  padding:0;
+  border:0;
+  font-size:25px;
+  box-sizing:border-box;
+  text-align:left;
+  color:#f3f5f6;
+  text-transform:none;
+  font-weight:700;
+  cursor:pointer;
+  font-family:inherit;
+  line-height:1.15;
+}
+
+/* -----------------------------------------------------FIN-FOOTER---------------------------------------------------------- */
+
+/* -----------------------------------------------------DEBUT--NAV---------------------------------------------------------- */
+.box{
+  margin:0;
+  padding:0;
+  display: flex;
+  width:100%;
+}
+
+.menuFilariane{
+  flex: 1 20 auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 10%;
+  padding-bottom: 16%;
+  border: 0;
+  box-sizing: border-box;
+  text-align: center;
+  background-color:#0843a6;
+  width:28%;
+
+
+}
+
+
+.menuFilarianeUl{
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+  vertical-align: center;
+
+
+}
+
+#cercle {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  border: 2px solid white;
+  box-sizing: border-box;
+
+}
+
+#line {
+  width: 0px;
+  height: 43px;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-left:9.5px;
+  margin-top:21px;
+
+}
+
+.menuFilarianeImg{
+  padding-bottom:80px;
+  padding-top:0px;
+
+}
+
+.menuFilarianeLi{
+  position: relative;
+  padding: 16px 0;
+  display: inline;
+}
+
+.menuBoutonFilariane{
+  position: relative;
+  display: inline-block;
+  padding: 8px 42px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-style: italic;
+  color: white;
+  border: 0;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 0;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0 30px;
+
+}
+
+.menuBoutonFilariane_content{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-style: italic;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.15;
+  text-align: left;
+  list-style: none;
+  visibility: visible;
+}
+
+
+/* -----------------------------------------------------FIN--NAV---------------------------------------------------------- */
+
+/* -----------------------------------------------------DEBUT--CAROUSEL---------------------------------------------------------- */
+
+.carousel{
+  width:72%;
+}
+
+/* -----------------------------------------------------FIN--CAROUSEL---------------------------------------------------------- */
+
+/* -----------------------------------------------------DEBUT--boutonCard---------------------------------------------------------- */
+
+.card-deck{
+
+  background-color: rgba(119, 119, 119, 0.8);
+  padding-bottom:10px;
+  display:flex;
+  justify-content:center;
+ 
+}
+.card {
+  border: 1px solid white;
+  background:transparent;
+  transform:skew(-18deg);
+  margin-top:-15px;
+  width:200px;
+  position:relative;
+  box-sizing: border-box;
+  
+}
+
+/* -----------------------------------------------------FIN--boutonCard---------------------------------------------------------- */
