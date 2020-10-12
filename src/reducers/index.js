@@ -306,7 +306,7 @@ const initialState = {
       }, 
 
       multimediaVue: {
-        1: {name:'Support caméra sport', px:89, imgCard:camera},
+        1: {name:'Support caméra sport - Fixation sur plage arrière', px:89, imgCard:camera},
         2: {name:'Support smartphone magnétique - Fixation sur tableau de bord', px:21, imgCard:smartphone},
       },
 
@@ -526,7 +526,7 @@ function rootReducer(state = initialState, action) {
 
       if (action.type === "CHOICE_ACCESSOIRES"){
 
-        if (action.accessoires === 'Option Transport'){
+        if (action.accessoires === "Option Transport"){
           return {
             ...state,
             carouselImagesAccessoires: state.transportVue,
@@ -534,7 +534,7 @@ function rootReducer(state = initialState, action) {
           }          
         }
 
-      if (action.accessoires === 'Options Multimédia'){
+      if (action.accessoires === "Options Multimédia"){
         return {
           ...state,
           carouselImagesAccessoires: state.multimediaVue,
@@ -542,21 +542,21 @@ function rootReducer(state = initialState, action) {
         }
       }
 
-       if (action.accessoires === 'Options Matériels'){
+       if (action.accessoires === "Options Matériels"){
         return {
           ...state,
           carouselImagesAccessoires: state.materielVue,
         }
       }
 
-      if (action.accessoires === 'Options Intérieur'){
+      if (action.accessoires === "Options Intérieur"){
         return {
           ...state,
           carouselImagesAccessoires: state.interieurVue,
         }
       }
 
-      if (action.accessoires === 'Options Extérieur'){
+      if (action.accessoires === "Options Extérieur"){
         return {
           ...state,
           carouselImagesAccessoires: state.exterieurVue,
@@ -564,6 +564,7 @@ function rootReducer(state = initialState, action) {
     }
   }
 
+  return state 
 }
 
  

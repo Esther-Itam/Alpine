@@ -330,6 +330,8 @@ body{
 
 .carousel{
   width:72%;
+  height: auto;
+
 }
 
 .presentationCarousel{
@@ -337,6 +339,8 @@ body{
   margin:0;
   background-color: #222;
   color:white;
+  height: auto;
+
 }
 
 .ImgCarousel{
@@ -350,7 +354,17 @@ body{
 
 .ImgCarousel img{
   padding: 0;
+  transform:skew(-18deg);
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+
 }
+
+
 
 .ImgCarousel h3{
   padding-top: 10px;
@@ -363,6 +377,87 @@ body{
   padding-top: 10px;
   font-size: 18px;
   font-style: italic;
+
+}
+
+.boutonCarousel{
+  opacity: 1;
+  display: block;
+  width: 70%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.ImgCarouselAccessoires{
+  margin-top: 60px;
+  margin-right:50px;
+  margin-left: 50px;
+  display: inline-block;
+  width:25%;
+}
+
+.ImgCarouselAccessoires img{
+  padding: 0;
+  transform:skew(-18deg);
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+
+} 
+
+.ImgCarouselAccessoires h3{
+  padding-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+
+}
+
+.ImgCarouselAccessoires h4{
+  padding-top: 10px;
+  font-size: 18px;
+  font-style: italic;
+
+}
+
+.container {
+  position: relative;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.5;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #0843a6;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.container button{
+  border:none; 
+  font-style: italic;
+  transform:skew(-18deg);
 
 }
 
@@ -381,7 +476,7 @@ body{
 }
 .card {
   border: 1.5px solid #0843a6;
-  background:transparent;
+  background:white;
   transform:skew(-18deg);
   margin-top:-15px;
   width:200px;
@@ -391,46 +486,39 @@ body{
   
 }
 
+.card:hover{
+  background-color: #222;
+  opacity: 1;
+  color:white;
+  border: 1.5px solid white;
+
+}
+
 .card button{
   background:transparent;
   border:none;
-  color:rgb(8, 8, 8);
+  color:#0843a6;
+  padding:0;
 
+}
+
+.card:hover button{
+  color:white;
 }
 
 .card img{
   border: 1px solid #0843a6;
   width:200px;
   padding: 0;
-  margin: -10px;
 
 }
+
+.card:hover img{
+  border: 1px solid white;
+  transition: .5s ease;
+  opacity: 0.5;
+
+}
+
 /* -----------------------------------------------------FIN--boutonCard---------------------------------------------------------- */
 
-/* -----------------------------------------------------DEBUT--accessoires---------------------------------------------------------- */
-
-.listeaccessoires{
-  width:75%;
-  margin:0;
-  padding: 0;
-  background-color: rgb(255, 255, 255);
-  display:flex;
-  justify-content:center;
-  position:relative;
-  box-sizing: border-box;
-  width:80.95%;
-}
-
-.listeaccessoires h2{
-  color:#0843a6;
-  
-}
-
-.listeaccessoires2{
-  margin:0;
-  padding: 0;
-  display:flex;
-  justify-content:center;
-  position:relative;
-  box-sizing: border-box;
-}

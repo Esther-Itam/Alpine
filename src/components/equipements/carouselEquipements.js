@@ -18,13 +18,18 @@ const CarouselEquipementComponent = () => {
                    
             <div className="ImgCarousel">   
                 
-            <div className="row">
-    
+            <div className="row" className="container">
+                
+
                 <img
-                    className="d-block w-100 m-50"
+                    className="d-block w-100 m-50" className="image"
                     src={CarouselEquipements[key].imgCard} 
                     alt="First slide"
-                />                
+                />  
+                <div class="middle">
+                    <button class="text">Sélectionner</button>
+                </div>                
+                   
             </div>
 
             <div>   

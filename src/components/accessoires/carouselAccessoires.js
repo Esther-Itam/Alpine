@@ -14,15 +14,18 @@ const CarouselAccessoiresComponent = () => {
         return Object.keys(CarouselAccessoires).map(key => (
         
                    
-            <div className="ImgCarousel">   
+            <div className="ImgCarouselAccessoires">   
                 
-            <div className="row">
-    
+            <div className="row" className="container">
+
                 <img
-                    className="d-block w-100 m-50"
+                    className="d-block w-100 m-50" className="image"
                     src={CarouselAccessoires[key].imgCard} 
                     alt="First slide"
-                />                
+                />
+                <div class="middle">
+                    <button class="text">Sélectionner</button>
+                </div>                
             </div>
 
             <div>   

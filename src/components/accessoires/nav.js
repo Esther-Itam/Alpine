@@ -47,7 +47,7 @@ return(
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
             <button className="menuBoutonFilariane">
-              <div className="menuBoutonFilariane_content">6/ Accessoires</div>
+              <div className="menuBoutonFilariane_content"><font size="5" color="black">6/ Accessoires</font></div>
             </button>
           </li>
         </ul>

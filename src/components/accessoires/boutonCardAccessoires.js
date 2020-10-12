@@ -15,7 +15,6 @@ const BoutonCardAccessoires = (props) => {
       
         <Card >
                     <button  onClick={() => choiceAccessoires()}>
-                    <Card.Img variant="top" src={props.accessoires} alt=""/>
                     <Card.Body>
                     <Card.Title>{props.name}</Card.Title>
                     </Card.Body>

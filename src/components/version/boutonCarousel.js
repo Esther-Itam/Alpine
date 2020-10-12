@@ -16,15 +16,20 @@ const BoutonCarousel = (props) => {
     return (
      <div className="boutonCarousel">   
                 
-           <div className="row" className="boutonCarouselImg">
+           <div className="row" className="container">
                
-                <Button onClick={()=>choiceVersion()}  variant="link" className="version">
+                
                 <img
                     className="d-block w-100 m-50"
                     src={props.version} 
                     alt="First slide"
-                />                
+                /> 
+                <div class="middle">
+                <Button onClick={()=>choiceVersion()}  variant="link" className="version" className="text">
+                    Sélectionner
                 </Button>  
+                </div>                
+               
             </div>
            
             <div>   

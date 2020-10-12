@@ -35,7 +35,7 @@ return (
      </div>
       <div className="footer">
           <FooterComponent/>
-          <Button className="footer_boutonOption" href="../../recapitulatif">
+          <Button className="footer_boutonOption" href="">
               <div className="footer_boutonContent">
               <span className="footer_boutonContentSpan">Option suivante: Récapitulatif</span>
               </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
 import { useSelector } from 'react-redux';
-import { Button, Card } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import CarouselEquipementComponent from './carouselEquipements';
 import BoutonCardEquipements from './boutonCardEquipements';
 

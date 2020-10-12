@@ -32,7 +32,7 @@ import NavComponent from './nav';
         </div>
           <div className="footer">
               <FooterComponent/>
-              <Link to="./couleurs" className="footer_boutonOption" >
+              <Link to="./couleurs" className="footer_boutonOption" href="./couleurs">
               <div className="footer_boutonContent">
                 <span className="footer_boutonContentSpan">Option suivante: Couleurs</span>
               </div>
