@@ -177,6 +177,7 @@ body{
   cursor:pointer;
   font-family:inherit;
   line-height:1.15;
+  text-decoration: none;
 }
 
 /* -----------------------------------------------------FIN-FOOTER---------------------------------------------------------- */
@@ -187,21 +188,16 @@ body{
   padding:0;
   display: flex;
   width:100%;
-  height:750px;
+  height:auto;
 }
 
 .boxBoutonCarousel{
-  margin:0;
-  padding:0;
   display: flex;
-  width:100%;
-  height:870px;
   color: antiquewhite;
   
 }
 
 .boutonCarousel{
-  width:600px;
   background-color: #222;
   font-style: italic;
 
@@ -222,7 +218,7 @@ body{
   text-align: center;
   background-color:#0843a6;
   width:28%;
-  height:870px;
+  height:auto;
 
 }
 
@@ -231,13 +227,12 @@ body{
   margin: 0;
   padding: 0;
   padding-top: 4%;
-  padding-bottom: 16%;
   border: 0;
   box-sizing: border-box;
   text-align: center;
   background-color:#0843a6;
   width:28%;
-  height:750px;
+  height:auto;
 
 
 }
@@ -329,17 +324,24 @@ body{
 /* -----------------------------------------------------DEBUT--CAROUSEL---------------------------------------------------------- */
 
 .carousel{
-  width:72%;
+  width:100%;
   height: auto;
+  flex: 1 20 auto;
+
 
 }
 
 .presentationCarousel{
-  width:72%;
+  width:100%;
   margin:0;
   background-color: #222;
   color:white;
-  height: auto;
+  height:auto;
+  flex: 1 20 auto;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+
 
 }
 
@@ -387,6 +389,22 @@ body{
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  margin:0;
+  flex: 1 100 auto;
+}
+
+.imageVersion{
+  padding: 0;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.container:hover .imageVersion {
+  opacity: 0.5;
 }
 
 .ImgCarouselAccessoires{
@@ -458,6 +476,7 @@ body{
   border:none; 
   font-style: italic;
   transform:skew(-18deg);
+  text-decoration: none;
 
 }
 
