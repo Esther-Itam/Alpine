@@ -1,7 +1,9 @@
-/* export function hitMonster(payload) {
-    return { type: "HIT_MONSTER", payload: "5" }
-  };
+// export function choiceColor(color) {
+  
+//     return  { type: "CHOICE_COLOR", color}
+//   };
+// export function hitBack(payload) {
+    
+//     return  { type: "HIT_BACK", payload}
+//   };
 
-  export function hitPlayer(payload) {
-    return { type: "HIT_BACK", payload}
-  }; */
