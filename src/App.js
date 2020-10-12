@@ -1,29 +1,28 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-
-
-import Jantes from './components/jantes';
-import Version from './components/version';
-import Sellerie from './components/sellerie';
-import Equipements from './components/equipement';
-import Accessoires from './components/accessoires';
-import Couleur from './components/couleur';
+import Jantes from './components/jantes/jantes';
+import Version from './components/version/version';
+import Sellerie from './components/sellerie/sellerie';
+import Equipements from './components/equipements/equipements';
+import Accessoires from './components/accessoires/accessoires';
+import Couleurs from './components/couleurs/couleurs';
 
 
 const  App = () => {
  
    return (
-
+     
       <Router>
         <div className="App">
           <Switch>
           <Route exact path="/">
             <Version />
           </Route>
-          <Route exact path="/couleur">
-            <Couleur/>
+          <Route path="/couleurs">
+            <Couleurs />
           </Route>
+         
           <Route path="/jantes">
             <Jantes />
           </Route>
@@ -34,17 +33,17 @@ const  App = () => {
             <Equipements />
           </Route>
           <Route path="/accessoires">
-            <Accessoires />
+            <Accessoires/>
           </Route>
-
+         
         </Switch>
-
+         
         </div>
       </Router>
-
-
+      
+      
     );
-
+  
 }
 
 export default App;

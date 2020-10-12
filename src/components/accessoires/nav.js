@@ -1,6 +1,6 @@
 
 import React from 'react';
-import logo from '../images/sources-homepage/logo/logo-white.png';
+import logo from '../../images/sources-homepage/logo/logo-white.png';
 
 
 

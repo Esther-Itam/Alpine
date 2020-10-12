@@ -187,19 +187,57 @@ body{
   padding:0;
   display: flex;
   width:100%;
+  height:750px;
 }
 
-.menuFilariane{
+.boxBoutonCarousel{
+  margin:0;
+  padding:0;
+  display: flex;
+  width:100%;
+  height:870px;
+  color: antiquewhite;
+  
+}
+
+.boutonCarousel{
+  width:600px;
+  background-color: #222;
+  font-style: italic;
+
+}
+.boutonCarousel h3{
+  margin-top: 150px;
+  font-size: 40px;
+}
+
+.menuFilarianeBoutonCarousel{
   flex: 1 20 auto;
   margin: 0;
   padding: 0;
-  padding-top: 10%;
+  padding-top: 4%;
   padding-bottom: 16%;
   border: 0;
   box-sizing: border-box;
   text-align: center;
   background-color:#0843a6;
   width:28%;
+  height:870px;
+
+}
+
+.menuFilariane{
+  flex: 1 20 auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 4%;
+  padding-bottom: 16%;
+  border: 0;
+  box-sizing: border-box;
+  text-align: center;
+  background-color:#0843a6;
+  width:28%;
+  height:750px;
 
 
 }
@@ -285,12 +323,47 @@ body{
 }
 
 
+
 /* -----------------------------------------------------FIN--NAV---------------------------------------------------------- */
 
 /* -----------------------------------------------------DEBUT--CAROUSEL---------------------------------------------------------- */
 
 .carousel{
   width:72%;
+}
+
+.presentationCarousel{
+  width:72%;
+  margin:0;
+  background-color: #222;
+  color:white;
+}
+
+.ImgCarousel{
+  margin-top: 30px;
+  margin-right:50px;
+  margin-left: 50px;
+  display: inline-block;
+  position: relative;
+  width:34%;
+}   
+
+.ImgCarousel img{
+  padding: 0;
+}
+
+.ImgCarousel h3{
+  padding-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+
+}
+
+.ImgCarousel h4{
+  padding-top: 10px;
+  font-size: 18px;
+  font-style: italic;
+
 }
 
 /* -----------------------------------------------------FIN--CAROUSEL---------------------------------------------------------- */
@@ -300,13 +373,14 @@ body{
 .card-deck{
 
   background-color: rgba(119, 119, 119, 0.8);
-  padding-bottom:10px;
+  padding-bottom:15px;
   display:flex;
   justify-content:center;
+  margin-top:-5px;
  
 }
 .card {
-  border: 1px solid white;
+  border: 1.5px solid #0843a6;
   background:transparent;
   transform:skew(-18deg);
   margin-top:-15px;
@@ -314,6 +388,49 @@ body{
   position:relative;
   box-sizing: border-box;
   
+  
 }
 
+.card button{
+  background:transparent;
+  border:none;
+  color:rgb(8, 8, 8);
+
+}
+
+.card img{
+  border: 1px solid #0843a6;
+  width:200px;
+  padding: 0;
+  margin: -10px;
+
+}
 /* -----------------------------------------------------FIN--boutonCard---------------------------------------------------------- */
+
+/* -----------------------------------------------------DEBUT--accessoires---------------------------------------------------------- */
+
+.listeaccessoires{
+  width:75%;
+  margin:0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  display:flex;
+  justify-content:center;
+  position:relative;
+  box-sizing: border-box;
+  width:80.95%;
+}
+
+.listeaccessoires h2{
+  color:#0843a6;
+  
+}
+
+.listeaccessoires2{
+  margin:0;
+  padding: 0;
+  display:flex;
+  justify-content:center;
+  position:relative;
+  box-sizing: border-box;
+}
