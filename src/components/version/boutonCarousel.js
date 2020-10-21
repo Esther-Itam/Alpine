@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
 import {useDispatch} from 'react-redux'
 
 
@@ -20,14 +19,14 @@ const BoutonCarousel = (props) => {
                
                 
                 <img
-                    className="d-block w-100 m-50"
+                    className="imageVersion"
                     src={props.version} 
                     alt="First slide"
                 /> 
                 <div class="middle">
-                <Button onClick={()=>choiceVersion()}  variant="link" className="version" className="text">
+                <button onClick={()=>choiceVersion()}  variant="link" className="version" className="text">
                     Sélectionner
-                </Button>  
+                </button>  
                 </div>                
                
             </div>

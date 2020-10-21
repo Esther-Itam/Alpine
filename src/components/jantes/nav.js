@@ -16,37 +16,37 @@ return(
 
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div> </div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./version">
             <div className="menuBoutonFilariane_content">1/ Version</div>
             </button>
           </li>
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./couleurs">
               <div className="menuBoutonFilariane_content">2/ Couleur</div>
             </button>
           </li>
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./jantes">
               <div className="menuBoutonFilariane_content"><font size="5" color="black">3/ Jantes</font></div>
             </button>
           </li>
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./sellerie">
               <div className="menuBoutonFilariane_content">4/ Sellerie</div>
             </button>
           </li>
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./equipements">
               <div className="menuBoutonFilariane_content">5/ Equipements</div>
             </button>
           </li>
           <li className="menuFilarianeLi">
             <div id="cercle"><div id="line"></div></div> 
-            <button className="menuBoutonFilariane">
+            <button className="menuBoutonFilariane" href="./accessoires">
               <div className="menuBoutonFilariane_content">6/ Accessoires</div>
             </button>
           </li>

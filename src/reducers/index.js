@@ -121,11 +121,35 @@ import outils from '../images/configurateur/accessoires/garage/kit-outils.jpg';
 import cabochons from '../images/configurateur/accessoires/exterieur/cabochons-metal.jpg';
 import housse from '../images/configurateur/accessoires/exterieur/housse.jpg';
 import antivols from '../images/configurateur/accessoires/exterieur/antivol-jantes.jpg';
+import Version from '../components/version/version';
+import Couleurs from '../components/couleurs/couleurs';
+import Equipements from '../components/equipements/equipements';
+import Accessoires from '../components/accessoires/accessoires';
 
 
 const initialState = {
 
     price :[],
+
+    paths: [
+      '/version',
+      '/couleurs',
+      '/jantes',
+      '/sellerie',
+      '/equipements',
+      '/accessoires',
+      '/recapitulatif'
+    ],
+
+    page:{
+      1:'Version',
+      2:'Couleurs',
+      3:'Jantes',
+      4:'Sellerie',
+      5:'Equipements',
+      6:'Accessoires',
+      7:'Recapitulatif'
+    },
 
 //---------------------------------------------VERSION-------------------------------------------
     version: {
@@ -284,6 +308,7 @@ const initialState = {
       3: {id: 3 , name:"Logo au centre du volant en Bleu Alpine", px: 84, imgCard: logoVolant},
       4: {id: 4 , name:"Sièges chauffants", px: 400, imgCard: siegeChauffant},
     },
+  
     
 
 //---------------------------------------------ACCESSOIRES-------------------------------------------
@@ -353,10 +378,7 @@ const initialState = {
 
   }
 
-
-
-
-  
+ 
 function rootReducer(state = initialState, action) {
 
   //........................................Action VERSION.............................................
@@ -366,14 +388,15 @@ function rootReducer(state = initialState, action) {
           return {
             ...state,
             carouselImages: state.imagesNoiresLegende,
-           
+            price: state.version[1].px,
           }
           
         }
       if (action.version === "Pure"){
         return {
           ...state,
-          carouselImages: state.imagesBlanchesPure
+          carouselImages: state.imagesBlanchesPure,
+          price: state.version[2].px,
 
         }
       }
@@ -387,19 +410,24 @@ function rootReducer(state = initialState, action) {
     if (action.color === "Teinte métallisée Noir Profond"){
     
         return {...state,
-          carouselImagesCouleurs: state.imagesNoiresLegende
+          carouselImagesCouleurs: state.imagesNoiresLegende,
+          price: state.couleurs[2].px,
       }
     }
     if (action.color === "Peinture opaque Blanc Glacier"){
      
       return {...state,
-        carouselImagesCouleurs: state.imagesBlanchesLegende
+        carouselImagesCouleurs: state.imagesBlanchesLegende,
+        price: state.couleurs[3].px,
+
       }
     }
     if (action.color === "Teinte spéciale Bleu Alpine"){
  
       return {...state,
-        carouselImagesCouleurs: state.imagesBleuesLegende
+        carouselImagesCouleurs: state.imagesBleuesLegende,
+        price: state.couleurs[1].px,
+
     }
     }
 
@@ -411,22 +439,26 @@ function rootReducer(state = initialState, action) {
         if (action.jantes === "legende"){
           return {
             ...state,
-            carouselImagesJantes: state.jantesVueLegende
-           
+            carouselImagesJantes: state.jantesVueLegende,
+            price: state.jantes[1].px,
+
           }
           
         }
       if (action.jantes === "serac"){
         return {
           ...state,
-          carouselImagesJantes: state.jantesVueSerac
+          carouselImagesJantes: state.jantesVueSerac,
+          price: state.jantes[2].px,
 
         }
       }
        if (action.jantes === "standard"){
         return {
           ...state,
-          carouselImagesJantes: state.jantesVueStandard
+          carouselImagesJantes: state.jantesVueStandard,
+          price: state.jantes[3].px,
+
 
         }
       }
@@ -440,7 +472,8 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           carouselImagesSellerie: state.cuirNoirDinamicaVue,
-         
+          price: state.sellerie[1].px,
+
         }
         
       }
@@ -448,6 +481,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         carouselImagesSellerie: state.cuirNoirPerforeVue,
+        price: state.sellerie[2].px,
 
       }
     }
@@ -455,6 +489,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         carouselImagesSellerie: state.cuirNoirVue,
+        price: state.sellerie[3].px,
 
       }
     }
@@ -462,6 +497,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         carouselImagesSellerie: state.cuirBrunVue,
+        price: state.sellerie[4].px,
 
       }
     }
@@ -474,11 +510,11 @@ function rootReducer(state = initialState, action) {
           return {
             ...state,
             carouselImagesEquipements: state.designVue,
-           
           }
           
         }
       if (action.equipements === "Média et Navigation"){
+          
         return {
           ...state,
           carouselImagesEquipements: state.mediaVue,
@@ -521,7 +557,39 @@ function rootReducer(state = initialState, action) {
         }
       }
     }
+    //........................................Action EQUIPEMENTS PRICE.............................................
 
+    if (action.type === "CHOICE_EQUIPEMENTS_PRICE"){
+      if (action.mediaVue === "Alpine Télémetrics"){
+        return {
+          ...state,
+          price: state.mediaVue[1].px,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio Focal"){
+        return {
+          ...state,
+          price: state.mediaVue[2].px,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio Focal Premium"){
+        return {
+          ...state,
+          price: state.mediaVue[3].px,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio standard"){
+        return {
+          ...state,
+          price: state.mediaVue[4].px,
+        }
+        
+      }
+
+    }
       //........................................Action ACCESSOIRES.............................................
 
       if (action.type === "CHOICE_ACCESSOIRES"){

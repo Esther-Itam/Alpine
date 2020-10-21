@@ -1,24 +1,22 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 
 
 
 
 
 const BoutonCardColor = (props) => {
-    const version = useSelector ((state)=>state.version)
     const dispatch = useDispatch();
 
     const choiceColor = () => {
-        dispatch({type:"CHOICE_COLOR", color : props.name, version:props.nameVersion});
+        dispatch({type:"CHOICE_COLOR", color : props.name});
     }
-    console.log (props.string)
 
  return (
        
             <Card >
-            <button  onClick={() => choiceColor()} >
+            <button  onClick={() => choiceColor()} variant="link">
                 <Card.Img variant="top" src={props.couleurs} alt=""/>
                 <Card.Body>
                 <Card.Title>{props.name}</Card.Title>

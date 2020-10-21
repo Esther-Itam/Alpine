@@ -3,12 +3,15 @@ import '../../App.css';
 import BoutonCarousel from './boutonCarousel';
 import FooterComponent from '../footer';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import NavComponent from './nav';
+import NextPage from '../nextPage';
 
 
- const Version = () => {
+
+ const Version = (props) => {
    
+    const page = useSelector((state)=>state.page) 
+    const paths = useSelector((state)=>state.paths) 
     const version = useSelector((state) => state.version)
     
     const displayVersion = () => {
@@ -32,11 +35,10 @@ import NavComponent from './nav';
         </div>
           <div className="footer">
               <FooterComponent/>
-              <Link to="./couleurs" className="footer_boutonOption" href="./couleurs">
-              <div className="footer_boutonContent">
-                <span className="footer_boutonContentSpan">Option suivante: Couleurs</span>
-              </div>
-              </Link>
+              <NextPage
+                nextPath={paths[1]}
+                nextPageName={page[2]}
+              />
           </div>
     </div>
   );
