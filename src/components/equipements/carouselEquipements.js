@@ -1,17 +1,15 @@
 
 import React from 'react';
-import {Carousel} from 'react-bootstrap';
 import NavComponent from './nav';
 import {useSelector} from 'react-redux';
-import equipements from '../../reducers/index';
-
+import BoutonSelectionComponent from './boutonSelection';
 
 
 
 const CarouselEquipementComponent = () => {
     const CarouselEquipements= useSelector((state)=> state.carouselImagesEquipements)
 
-       
+           
     const displayCarouselImagesEquipements = () => {
         return Object.keys(CarouselEquipements).map(key => (
         
@@ -27,7 +25,7 @@ const CarouselEquipementComponent = () => {
                     alt="First slide"
                 />  
                 <div class="middle">
-                    <button class="text">Sélectionner</button>
+                <BoutonSelectionComponent/>
                 </div>                
                    
             </div>

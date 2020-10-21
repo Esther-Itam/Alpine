@@ -1,49 +1,26 @@
-/* import React from 'react';
-
-
-
-
-const FooterComponent = () => {
-
-
-return(
-    
-        <div className="footer_details">           
-            <span className="footer_price">Price: 33 333 euros</span>
-            <span className="footer_split">/</span>
-            <button className="footer_boutonRecap">
-                <div className="footer_boutonRecapContent">Récapitulatif</div>
-            </button>
-        </div>    
-            
- 
-
-    );
-  
-}
-
-export default FooterComponent; */
-
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import {BrowserRouter as Router,Switch,Route,Link, Redirect} from "react-router-dom";
 
 
 
 
 const FooterComponent = () => {
-    const version = useSelector ((state) => state.version)
-
+    const price = useSelector ((state) => state.price)
+    const [count, setCount] =  useState(price);
+    const paths = useSelector((state)=>state.paths)
 
 return(
    <div className="footer_details">
-            <span className="footer_price">Price: {version[1].px} euros</span>
+            <span className="footer_price">Price: <Compteur/> euros</span>
             <span className="footer_split">/</span>
-            <button className="footer_boutonRecap">
+            <Link to={paths[6]} className="footer_boutonRecap">
                 <div className="footer_boutonRecapContent">Récapitulatif</div>
-            </button>
+            </Link>
         </div>
     );
 
 }
 
 export default FooterComponent;
+

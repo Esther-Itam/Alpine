@@ -2,13 +2,16 @@ import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
 import { useSelector } from 'react-redux';
-import { Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CarouselEquipementComponent from './carouselEquipements';
 import BoutonCardEquipements from './boutonCardEquipements';
+import NextPage from '../nextPage';
 
 
 const Equipements = ()=> {
 
+    const page = useSelector((state)=>state.page) 
+    const paths = useSelector((state)=>state.paths) 
     const equipementsChoix =useSelector(state => state.equipements)
     const displayEquipements = () => {
         
@@ -22,7 +25,7 @@ const Equipements = ()=> {
         }
 
 return (
-    <div>
+    <container>
     
     <CarouselEquipementComponent/>
     
@@ -36,14 +39,13 @@ return (
      </div>
       <div className="footer">
           <FooterComponent/>
-          <Button className="footer_boutonOption" href="./accessoires">
-              <div className="footer_boutonContent">
-              <span className="footer_boutonContentSpan">Option suivante: Accessoires</span>
-              </div>
-          </Button>
+          <NextPage
+            nextPath={paths[5]}
+            nextPageName={page[6]}
+          />
 
         </div>
-    </div>
+    </container>
 )
 
 }
