@@ -1,15 +1,18 @@
 import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CarouselJantesComponent from './carouselJantes';
 import {useSelector} from 'react-redux'
 import BoutonCardJantes from './boutonCardJantes';
+import NextPage from '../nextPage';
 
 
 
 const Jantes = ()=> {
     
+    const page = useSelector((state)=>state.page) 
+    const paths = useSelector((state)=>state.paths) 
     const  jantesChoix = useSelector((state)=> state.jantes)   
   
  const displayJantes = () => {
@@ -37,11 +40,11 @@ return (
     
       <div className="footer">
           <FooterComponent/>
-          <Button className="footer_boutonOption" href="./sellerie">
-              <div className="footer_boutonContent">
-              <span className="footer_boutonContentSpan">Option suivante: Sellerie</span>
-              </div>
-          </Button>
+          <NextPage
+            nextPath={paths[3]}
+            nextPageName={page[4]}
+          />
+
 
         </div>
     </div>

@@ -2,13 +2,15 @@ import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
 import { useSelector } from 'react-redux';
-import { Button} from 'react-bootstrap';
 import CarouselAccessoiresComponent from './carouselAccessoires';
 import BoutonCardAccessoires from './boutonCardAccessoires';
+import NextPage from '../nextPage';
 
 
 const Accessoires = ()=> {
 
+    const page = useSelector((state)=>state.page) 
+    const paths = useSelector((state)=>state.paths) 
     const accessoiresChoix =useSelector(state => state.accessoires)
     const displayAccessoires = () => {
         
@@ -35,11 +37,10 @@ return (
      </div>
       <div className="footer">
           <FooterComponent/>
-          <Button className="footer_boutonOption" href="">
-              <div className="footer_boutonContent">
-              <span className="footer_boutonContentSpan">Option suivante: Récapitulatif</span>
-              </div>
-          </Button>
+          <NextPage
+            nextPath={paths[6]}
+            nextPageName={page[7]}
+          />
 
         </div>
     </div>
