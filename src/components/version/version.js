@@ -8,20 +8,15 @@ import NextPage from '../nextPage';
 
 
 
- const Version = (props) => {
+ const Version = () => {
    
     const page = useSelector((state)=>state.page) 
     const paths = useSelector((state)=>state.paths) 
     const version = useSelector((state) => state.version)
-    
-    const displayVersion = () => {
-        
-        return Object.keys(version).map(key => 
-             
+    const displayVersion = () => {      
+        return Object.keys(version).map(key =>             
         (
-       
         <BoutonCarousel key={version[key].id} version={version[key].img } name={version[key].name} px={version[key].px}  />
- 
         ));
       }
     
@@ -43,7 +38,6 @@ import NextPage from '../nextPage';
     </div>
   );
 }
-
 export default Version;
  
  

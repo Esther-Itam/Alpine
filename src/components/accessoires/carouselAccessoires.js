@@ -7,9 +7,9 @@ import {useSelector} from 'react-redux';
 
 
 const CarouselAccessoiresComponent = () => {
-    const CarouselAccessoires= useSelector((state)=> state.carouselImagesAccessoires)
 
-       
+    const CarouselAccessoires= useSelector((state)=> state.carouselImagesAccessoires)
+      
     const displayCarouselImagesAccessoires = () => {
         return Object.keys(CarouselAccessoires).map(key => (
         

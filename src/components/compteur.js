@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import {BrowserRouter as Router,Switch,Route,Link, Redirect} from "react-router-dom";
+import React from 'react';
+import {useDispatch} from 'react-redux'
 
 
 
-
-const CompteurComponent = () => {
-    const price = useSelector ((state) => state.price)
-    const [count, setCount] =  useState(price);
-    const paths = useSelector((state)=>state.paths)
-
-return(
-        <div>
-
+const CompteurComponent = (props) => {
+   //const  versions= useSelector((state)=> state.version)
+   const dispatch = useDispatch();
+    const choicePersonnalisation = () => {
+        dispatch({type:"CHOICE_PRICE", version: props.name});
+       
+    }
+    
+    
+    return (
+     
+                <button onClick={()=>choicePersonnalisation()}  variant="link" className="version" className="text">
+                    Sélectionner
+                </button>  
+                    
             
-        </div>
-    );
-
+        );
+    
+     
+       
 }
 
 export default CompteurComponent;
-

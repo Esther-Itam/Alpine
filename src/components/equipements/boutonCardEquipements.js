@@ -1,15 +1,21 @@
 import React from 'react';
 import {useDispatch} from 'react-redux'
 import { Card } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+
 
 
 const BoutonCardEquipements = (props) => {
 
-   const dispatch = useDispatch();
+   const increment= useSelector((state)=> state.increment)
+   const [count, setCount] = useState(0);
 
-    const choiceEquipements = () => {
-        dispatch({type:"CHOICE_EQUIPEMENTS", equipements : props.name});
-    }
+   const dispatch = useDispatch();
+   const choiceEquipements = () => {
+        dispatch({type:"CHOICE_EQUIPEMENTS", equipements : props.name});}
+       
+
     
     return (
       
@@ -18,6 +24,7 @@ const BoutonCardEquipements = (props) => {
                     <Card.Img variant="top" src={props.equipements} alt=""/>
                     <Card.Body>
                     <Card.Title>{props.name}</Card.Title>
+                    <Card.Subtitle>Nombre d'options:{count.length}</Card.Subtitle>
                     </Card.Body>
                     </button>
                 </Card>

@@ -2,30 +2,28 @@ import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import CarouselEquipementComponent from './carouselEquipements';
 import BoutonCardEquipements from './boutonCardEquipements';
 import NextPage from '../nextPage';
+import Container from 'react-bootstrap/Container';
+import {connect} from 'react-redux';
 
 
 const Equipements = ()=> {
 
     const page = useSelector((state)=>state.page) 
     const paths = useSelector((state)=>state.paths) 
-    const equipementsChoix =useSelector(state => state.equipements)
+    const equipementsChoix = useSelector(state => state.equipements)
+
     const displayEquipements = () => {
-        
-        
+
         return Object.keys(equipementsChoix).map(key => (
-             
-
             <BoutonCardEquipements key={equipementsChoix[key].id} equipements={equipementsChoix[key].imgCard} name={equipementsChoix[key].name}/>         
-
             ));
         }
 
 return (
-    <container>
+    <Container fluid>
     
     <CarouselEquipementComponent/>
     
@@ -45,9 +43,9 @@ return (
           />
 
         </div>
-    </container>
+    </Container>
 )
 
 }
 
-export default Equipements;
+export default connect()(Equipements);

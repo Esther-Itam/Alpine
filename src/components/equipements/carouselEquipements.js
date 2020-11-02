@@ -3,13 +3,15 @@ import React from 'react';
 import NavComponent from './nav';
 import {useSelector} from 'react-redux';
 import BoutonSelectionComponent from './boutonSelection';
+import { useState } from 'react';
 
 
 
-const CarouselEquipementComponent = () => {
+const CarouselEquipementComponent = (props) => {
     const CarouselEquipements= useSelector((state)=> state.carouselImagesEquipements)
+    const count = useSelector(state => state.mediaVue)
 
-           
+      
     const displayCarouselImagesEquipements = () => {
         return Object.keys(CarouselEquipements).map(key => (
         
@@ -24,7 +26,8 @@ const CarouselEquipementComponent = () => {
                     src={CarouselEquipements[key].imgCard} 
                     alt="First slide"
                 />  
-                <div class="middle">
+                <div className="middle">
+                 
                 <BoutonSelectionComponent/>
                 </div>                
                    

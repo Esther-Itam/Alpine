@@ -121,15 +121,14 @@ import outils from '../images/configurateur/accessoires/garage/kit-outils.jpg';
 import cabochons from '../images/configurateur/accessoires/exterieur/cabochons-metal.jpg';
 import housse from '../images/configurateur/accessoires/exterieur/housse.jpg';
 import antivols from '../images/configurateur/accessoires/exterieur/antivol-jantes.jpg';
-import Version from '../components/version/version';
-import Couleurs from '../components/couleurs/couleurs';
-import Equipements from '../components/equipements/equipements';
-import Accessoires from '../components/accessoires/accessoires';
+
 
 
 const initialState = {
 
     price :[],
+
+    count:0,
 
     paths: [
       '/version',
@@ -340,12 +339,12 @@ const initialState = {
         2: {name:'Kit Outils Alpine', px:398, imgCard:outils},
       },
 
-      interieurVue: {
+      interieurVueAcc: {
         1: {name:'Tapis de coffre', px:83, imgCard:coffre},
         2: {name:'Filet de rangement - Horizontal', px:59, imgCard:filet},
       },
       
-      exterieurVue: {
+      exterieurVueAcc: {
         1: {name:'Cabochons Alpine - Métalisés', px:24, imgCard:cabochons},
         2: {name:'Housse de protection Alpine', px:216, imgCard:housse},
         3: {name:'Antivols pour jante - Noirs', px:51, imgCard:antivols},
@@ -376,13 +375,74 @@ const initialState = {
     3:{imgCard:vueInterieur3},
   },
 
+ 
+
+ //---------------------------------------------PRICE-------------------------------------------
+
+ personnalisation: {
+
+  version: {
+    1: { id: 1, name: "Légende", px: 58500},
+    2: { id: 2, name: "Pure", px: 54700},
+    },
+
+  couleurs:{
+    1: { id: 1, name: "Teinte spéciale Bleu Alpine", px: 1800},
+    2: { id: 2, name: "Teinte métallisée Noir Profond", px: 840},
+    3: { id: 3, name: "Peinture opaque Blanc Glacier", px: 0},
+    }, 
+
+  jantes : {
+    1: {id:1, name: "legende", px: 0},
+    2: {id:2, name:"serac", px: 1000},
+    3: { id:3, name:"standard", px: 0},
+    },
+
+  sellerie : {
+    1: { id: 1, name: "dinamica", px: 0},
+    2: { id: 2, name: "Noir Perfore", px: 800},
+    3: { id: 3, name: "Cuir Noir", px: 0},
+    4: {id: 4, name: "Cuir Brun", px: 0},
+    },
+
+
+  total: { px: 0 }
+},
+
+
+
+}
+
+function rootReducer(state = initialState, action) {
+  
+ 
+  //........................................Action PRICE.............................................
+  
+  if (action.type === "CHOICE_PRICE"){
+    const chosen = action.payload;
+    if(action.personnalisation === 'version'){
+      return  {...state,
+        personnalisation: {...state.personnalisation,
+            version: {...state.personnalisation.version,
+              price: state.personnalisation.version.px = chosen.prix
+          }
+        },
+        total: { ...state,
+          price: state.px =
+          (state.personnalisation.version.px) + 
+          (state.personnalisation.couleurs.px) + 
+          (state.personnalisation.jantes.px) + 
+          (state.personnalisation.scellerie.px) + 
+          (state.personnalisation.equipements.px) + 
+          (state.personnalisation.accessoires.px)
+        }
+      }
+      
+    }
   }
 
- 
-function rootReducer(state = initialState, action) {
-
   //........................................Action VERSION.............................................
-    
+
   if (action.type === "CHOICE_VERSION"){
         if (action.version === "Légende"){
           return {
@@ -510,6 +570,8 @@ function rootReducer(state = initialState, action) {
           return {
             ...state,
             carouselImagesEquipements: state.designVue,
+            increment:state.count + 1,
+
           }
           
         }
@@ -564,6 +626,10 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           price: state.mediaVue[1].px,
+          increment:state.count === 1,
+          decrement:state.count === 0,
+          theme:bleu,
+
         }
         
       }
@@ -571,6 +637,9 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           price: state.mediaVue[2].px,
+          increment:state.count = 1,
+          decrement:state.count = 0,
+
         }
         
       }
@@ -578,6 +647,9 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           price: state.mediaVue[3].px,
+          count:state.count = 1,
+          decrement:state.count = 0,
+
         }
         
       }
@@ -585,11 +657,50 @@ function rootReducer(state = initialState, action) {
         return {
           ...state,
           price: state.mediaVue[4].px,
+          increment:state.count + 1,
+          decrement:state.count = 0,
+
         }
         
       }
 
     }
+
+    //........................................Action EQUIPEMENTS INCREMENTATION.............................................
+
+    if (action.type === "INCREMENTATION_EQUIPEMENTS"){
+      if (action.mediaVue === "Alpine Télémetrics"){
+        return {
+          ...state,
+          increment: state + 1,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio Focal"){
+        return {
+          ...state,
+          increment: state + 1,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio Focal Premium"){
+        return {
+          ...state,
+          increment: state + 1,
+        }
+        
+      }
+      if (action.mediaVue === "Système Audio standard"){
+        return {
+          ...state,
+          increment: state + 1,
+        }
+        
+      }
+
+    }
+
+
       //........................................Action ACCESSOIRES.............................................
 
       if (action.type === "CHOICE_ACCESSOIRES"){
@@ -620,14 +731,14 @@ function rootReducer(state = initialState, action) {
       if (action.accessoires === "Options Intérieur"){
         return {
           ...state,
-          carouselImagesAccessoires: state.interieurVue,
+          carouselImagesAccessoires: state.interieurVueAcc,
         }
       }
 
       if (action.accessoires === "Options Extérieur"){
         return {
           ...state,
-          carouselImagesAccessoires: state.exterieurVue,
+          carouselImagesAccessoires: state.exterieurVueAcc,
         }
     }
   }

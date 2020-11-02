@@ -2,7 +2,6 @@ import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
 import CarouselSellerieComponent from './carouselSellerie';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import BoutonCardSellerie from './boutonCardSellerie';
 import NextPage from '../nextPage';

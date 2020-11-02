@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import FooterComponent from '../footer';
-import { Link } from 'react-router-dom';
 import CarouselJantesComponent from './carouselJantes';
 import {useSelector} from 'react-redux'
 import BoutonCardJantes from './boutonCardJantes';
